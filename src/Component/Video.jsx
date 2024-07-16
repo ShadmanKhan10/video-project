@@ -27,20 +27,27 @@ export default function Video() {
     setIsPlaying(false);
   };
 
-  //   const handleEnded = () => {
-  //     setIsPlaying(false);
-  //     setShowImage(true);
-  //     setNum(num + 1);
-  //   };
+  // const handleEnded = () => {
+  //   setIsPlaying(false);
+  //   setShowImage(true);
+  //   setNum(num + 1);
+  // };
 
   const handleEnded = () => {
     setIsPlaying(false);
     setShowImage(true);
+    setNum(null);
 
     setTimeout(() => {
       setShowImage(false);
       setIsPlaying(true);
-      setNum((prevNum) => (prevNum % 3) + 1);
+      setNum(num + 1);
+      if (num === 3) {
+        setIsPlaying(false);
+        setShowImage(true);
+        setNum(null);
+      }
+      console.log(num);
     }, 5000);
   };
 
