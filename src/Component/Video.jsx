@@ -27,10 +27,21 @@ export default function Video() {
     setIsPlaying(false);
   };
 
+  //   const handleEnded = () => {
+  //     setIsPlaying(false);
+  //     setShowImage(true);
+  //     setNum(num + 1);
+  //   };
+
   const handleEnded = () => {
     setIsPlaying(false);
     setShowImage(true);
-    setNum(num + 1);
+
+    setTimeout(() => {
+      setShowImage(false);
+      setIsPlaying(true);
+      setNum((prevNum) => (prevNum % 3) + 1);
+    }, 5000);
   };
 
   return (
@@ -51,7 +62,6 @@ export default function Video() {
             src={sample}
             autoPlay
             muted
-            controls
             className="video-element"
             onPlay={handlePlay}
             onPause={handlePause}
@@ -63,7 +73,6 @@ export default function Video() {
             src={sample1}
             autoPlay
             muted
-            controls
             className="video-element"
             onPlay={handlePlay}
             onPause={handlePause}
@@ -75,7 +84,6 @@ export default function Video() {
             src={sample2}
             autoPlay
             muted
-            controls
             className="video-element"
             onPlay={handlePlay}
             onPause={handlePause}
