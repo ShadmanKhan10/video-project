@@ -1,0 +1,19 @@
+.video-container {
+  background-color: black;
+}
+
+.video-element {
+  width: 100vw;
+  aspect-ratio: 16/9;
+  display: block;
+}
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.video-image {
+  width: 100vw;
+  aspect-ratio: 16/9;
+  display: block;
+}
